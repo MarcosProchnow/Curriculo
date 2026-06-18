@@ -3,19 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Marcos Prochnow — Software Developer</title>
+<title>Marcos Prochnow | Software Developer</title>
 <meta name="description" content="Desenvolvedor de software especializado em GeneXus, Go e SQL Server. Professor universitário em Ciência de Dados e Machine Learning.">
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700;900&family=JetBrains+Mono:wght@400;500;700&display=swap');
-
   :root {
-    --bg: #0a0a0a;
-    --bg2: #111111;
-    --line: rgba(255,255,255,0.09);
-    --text: #f0f0f0;
-    --muted: #777;
-    --accent: #c8c8c8;
-    --signal: #4ade80;
+    --bg: #0a0a0a; --bg2: #111111; --line: rgba(255,255,255,0.09);
+    --text: #f0f0f0; --muted: #777; --accent: #c8c8c8; --signal: #4ade80;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
@@ -46,15 +40,11 @@
     border-bottom: 1px solid var(--line);
   }
   .hero-inner { max-width: 1140px; margin: 0 auto; width: 100%; }
-  .hero-top {
-    display: flex; align-items: center; gap: 1.5rem;
-    margin-bottom: 1.75rem;
-  }
+  .hero-top { display: flex; align-items: center; gap: 1.5rem; margin-bottom: 1.75rem; }
   .hero-photo {
     width: 72px; height: 72px; border-radius: 50%;
     object-fit: cover; object-position: center top;
-    filter: grayscale(20%);
-    border: 1px solid var(--line); flex-shrink: 0;
+    filter: grayscale(20%); border: 1px solid var(--line); flex-shrink: 0;
   }
   .hero-meta { font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; color: var(--muted); line-height: 1.8; }
   .hero h1 {
@@ -62,9 +52,7 @@
     letter-spacing: -0.025em; text-transform: uppercase; margin-bottom: 2rem;
   }
   .hero h1 em { color: var(--muted); font-style: normal; }
-  .hero-bottom {
-    display: grid; grid-template-columns: 1fr 340px; gap: 3rem; align-items: end;
-  }
+  .hero-bottom { display: grid; grid-template-columns: 1fr 340px; gap: 3rem; align-items: end; }
   .hero-role {
     font-family: 'JetBrains Mono', monospace; font-size: 0.85rem;
     color: var(--text); border-left: 2px solid var(--signal);
@@ -97,19 +85,18 @@
   .about-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 4rem; }
   .about-text p { font-size: 1.1rem; line-height: 1.8; color: var(--accent); margin-bottom: 1.25rem; }
   .about-text strong { color: var(--text); font-weight: 700; }
-  .about-stats { display: flex; flex-direction: column; gap: 0; }
+  .about-stats { display: flex; flex-direction: column; }
   .stat-row { display: flex; justify-content: space-between; align-items: baseline; padding: 1.1rem 0; border-bottom: 1px solid var(--line); }
   .stat-row .n { font-family: 'JetBrains Mono', monospace; font-size: 2rem; font-weight: 700; }
   .stat-row .l { font-size: 0.83rem; color: var(--muted); text-align: right; max-width: 160px; line-height: 1.4; }
   .cert-badge {
     margin-top: 2rem; border: 1px solid rgba(74,222,128,0.25); padding: 1rem 1.25rem;
-    display: flex; align-items: center; gap: 1rem; text-decoration: none;
-    transition: border-color 0.2s;
+    display: flex; align-items: center; gap: 1rem; text-decoration: none; transition: border-color 0.2s;
   }
   .cert-badge:hover { border-color: var(--signal); }
   .cert-badge .cert-icon { font-size: 1.5rem; }
-  .cert-badge .cert-text .cert-name { font-size: 0.85rem; font-weight: 600; color: var(--text); }
-  .cert-badge .cert-text .cert-issuer { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: var(--signal); margin-top: 2px; }
+  .cert-badge .cert-name { font-size: 0.85rem; font-weight: 600; color: var(--text); }
+  .cert-badge .cert-issuer { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: var(--signal); margin-top: 2px; }
   @media (max-width: 800px) { .about-grid { grid-template-columns: 1fr; gap: 2.5rem; } }
 
   /* STACK */
@@ -123,7 +110,18 @@
   @media (max-width: 900px) { .stack-grid { grid-template-columns: repeat(2, 1fr); } }
   @media (max-width: 500px) { .stack-grid { grid-template-columns: 1fr; } }
 
-  /* PROJETOS / DOMINIO */
+  /* EXPERIENCIA */
+  .exp-item { padding: 2rem 0; border-bottom: 1px solid var(--line); display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: start; }
+  .exp-item:last-child { border-bottom: none; }
+  .exp-company { font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; color: var(--signal); letter-spacing: 0.04em; margin-bottom: 0.4rem; }
+  .exp-item h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 0.5rem; }
+  .exp-item p { color: var(--muted); font-size: 0.88rem; line-height: 1.65; max-width: 640px; }
+  .exp-period { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: var(--muted); white-space: nowrap; padding-top: 0.2rem; }
+  .exp-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.75rem; }
+  .exp-tag { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; color: var(--muted); border: 1px solid var(--line); padding: 2px 7px; }
+  @media (max-width: 700px) { .exp-item { grid-template-columns: 1fr; gap: 0.5rem; } }
+
+  /* DOMINIO */
   .proj { padding: 2.25rem 0; border-bottom: 1px solid var(--line); display: grid; grid-template-columns: 56px 1fr auto; gap: 2rem; align-items: start; }
   .proj:last-child { border-bottom: none; }
   .proj-n { font-family: 'JetBrains Mono', monospace; color: var(--muted); font-size: 0.85rem; padding-top: 0.25rem; }
@@ -135,6 +133,19 @@
   .proj-status .badge { width: 6px; height: 6px; border-radius: 50%; background: var(--signal); display: inline-block; }
   .proj-status .badge.off { background: var(--muted); }
   @media (max-width: 700px) { .proj { grid-template-columns: 1fr; gap: 0.6rem; } }
+
+  /* FORMACAO */
+  .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); border: 1px solid var(--line); margin-bottom: 2.5rem; }
+  .form-item { background: var(--bg); padding: 1.75rem; }
+  .form-item .form-year { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: var(--signal); margin-bottom: 0.5rem; }
+  .form-item h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.3rem; }
+  .form-item .form-inst { font-size: 0.82rem; color: var(--muted); }
+  .form-comp-title { font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 1.25rem; }
+  .form-comp-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
+  .form-comp-item { border: 1px solid var(--line); padding: 0.9rem 1.1rem; }
+  .form-comp-item .fc-name { font-size: 0.85rem; font-weight: 600; margin-bottom: 0.25rem; }
+  .form-comp-item .fc-detail { font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; color: var(--muted); }
+  @media (max-width: 700px) { .form-grid { grid-template-columns: 1fr; } .form-comp-grid { grid-template-columns: 1fr; } }
 
   /* DOCENCIA */
   .teach-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 4rem; align-items: start; }
@@ -148,8 +159,7 @@
     display: flex; align-items: center; justify-content: space-between;
     font-family: 'JetBrains Mono', monospace; font-size: 0.8rem;
     color: var(--text); text-decoration: none;
-    border-top: 1px solid var(--line); padding-top: 1.25rem; margin-top: 1.5rem;
-    transition: color 0.2s;
+    border-top: 1px solid var(--line); padding-top: 1.25rem; margin-top: 1.5rem; transition: color 0.2s;
   }
   .teach-link:hover { color: var(--signal); }
   @media (max-width: 800px) { .teach-grid { grid-template-columns: 1fr; gap: 2rem; } }
@@ -178,37 +188,30 @@
 </head>
 <body>
 
-<!-- TOPBAR -->
 <nav class="topbar">
   <div class="topbar-left"><span class="dot"></span><span>disponível para novos projetos</span></div>
   <div class="topbar-right">
     <a href="#sobre">01 / Sobre</a>
     <a href="#stack">02 / Stack</a>
-    <a href="#atuacao">03 / Atuação</a>
-    <a href="#docencia">04 / Docência</a>
-    <a href="#contato">05 / Contato</a>
+    <a href="#experiencia">03 / Experiência</a>
+    <a href="#atuacao">04 / Atuação</a>
+    <a href="#formacao">05 / Formação</a>
+    <a href="#docencia">06 / Docência</a>
+    <a href="#contato">07 / Contato</a>
   </div>
 </nav>
 
-<!-- HERO -->
 <header class="hero">
   <div class="hero-inner">
     <div class="hero-top">
       <img class="hero-photo"
         src="https://media.licdn.com/dms/image/v2/D4D03AQFv73d7LdnqLA/profile-displayphoto-scale_400_400/B4DZnGtRYMJEAg-/0/1759975382260?e=1783555200&v=beta&t=TLUwoNOfkNYxII1E2ePuqELFZ9myXKzoqRJTN1RNs60"
         alt="Marcos Prochnow">
-      <div class="hero-meta">
-        SOFTWARE DEVELOPER<br>
-        BOA VISTA, RR / REMOTO / 2026
-      </div>
+      <div class="hero-meta mono">SOFTWARE DEVELOPER<br>BOA VISTA, RR / REMOTO / 2026</div>
     </div>
     <h1>MARCOS <em>PROCHNOW</em></h1>
     <div class="hero-bottom">
-      <div class="hero-role mono">
-        GeneXus · Go · SQL Server<br>
-        ERP/DMS Automotivo<br>
-        Ciência de Dados e IA
-      </div>
+      <div class="hero-role mono">GeneXus · Go · SQL Server<br>ERP/DMS Automotivo<br>Ciência de Dados e IA</div>
       <div class="hero-btns">
         <a class="btn btn-fill" href="mailto:marcosprochnow@gmail.com">Entrar em contato</a>
         <a class="btn btn-line" href="https://www.linkedin.com/in/marcosprochnow" target="_blank">LinkedIn</a>
@@ -217,18 +220,15 @@
   </div>
 </header>
 
-<!-- SOBRE -->
+<!-- 01 SOBRE -->
 <section id="sobre">
   <div class="wrap">
-    <div class="sec-head">
-      <span class="sec-num mono">01</span>
-      <h2 class="sec-title">Sobre</h2>
-    </div>
+    <div class="sec-head"><span class="sec-num mono">01</span><h2 class="sec-title">Sobre</h2></div>
     <div class="about-grid">
       <div class="about-text">
-        <p>Desenvolvedor de software com quase <strong>cinco anos focado em sistemas ERP/DMS para o setor automotivo</strong>, com especialização no módulo de Oficina. No dia a dia, atuo com GeneXus (Ev2 e 18), SQL Server (T-SQL), C# e PowerBuilder — integrando sistemas legados com APIs REST e SOAP em ambiente de alta criticidade.</p>
-        <p>Antes de entrar no desenvolvimento, passei anos como <strong>Gestor de TI e Gerente Comercial em uma concessionária</strong>. Isso me dá uma leitura de negócio que vai além do código: entendo o impacto real de cada sistema que desenvolvo ou corrijo.</p>
-        <p>Em paralelo, atuo como <strong>Professor Universitário</strong> em cursos de Graduação e Pós-Graduação nas áreas de Ciência de Dados, Machine Learning e IA — e estou me especializando em <strong>Go</strong> para arquiteturas backend modernas.</p>
+        <p>Desenvolvedor de software com quase <strong>cinco anos focado em sistemas ERP/DMS para o setor automotivo</strong>, com especialização no módulo de Oficina. Atuo com GeneXus (Ev2 e 18), SQL Server (T-SQL), C# e PowerBuilder, integrando sistemas via APIs REST e SOAP em ambiente de alta criticidade.</p>
+        <p>Antes de entrar no desenvolvimento, passei anos como <strong>Gestor de TI e Gerente Comercial em uma concessionária</strong>. Esse histórico me dá uma leitura de negócio que vai além do código: entendo o impacto real de cada sistema que desenvolvo ou corrijo.</p>
+        <p>Em paralelo, atuo como <strong>Professor Universitário</strong> em cursos de Graduação e Pós-Graduação nas áreas de Ciência de Dados, Machine Learning e IA. Estou me especializando em <strong>Go</strong> para arquiteturas backend modernas.</p>
       </div>
       <div>
         <div class="about-stats">
@@ -239,7 +239,7 @@
         </div>
         <a class="cert-badge" href="https://training.genexus.com/en/learn/certified-technician-detail/123787" target="_blank" rel="noopener">
           <span class="cert-icon">🏅</span>
-          <div class="cert-text">
+          <div>
             <div class="cert-name">GeneXus 18 Junior Analyst</div>
             <div class="cert-issuer">GeneXus Internacional · Cred. 25593</div>
           </div>
@@ -249,16 +249,13 @@
   </div>
 </section>
 
-<!-- STACK -->
+<!-- 02 STACK -->
 <section id="stack">
   <div class="wrap">
-    <div class="sec-head">
-      <span class="sec-num mono">02</span>
-      <h2 class="sec-title">Technical Stack</h2>
-    </div>
+    <div class="sec-head"><span class="sec-num mono">02</span><h2 class="sec-title">Technical Stack</h2></div>
     <div class="stack-grid">
       <div class="stack-col">
-        <h3>ERP / Legado</h3>
+        <h3>ERP / Automotivo</h3>
         <div class="stack-item"><span>GeneXus Ev2 / 18</span><span class="lvl green">AVANÇADO</span></div>
         <div class="stack-item"><span>PowerBuilder</span><span class="lvl green">AVANÇADO</span></div>
         <div class="stack-item"><span>C#</span><span class="lvl green">AVANÇADO</span></div>
@@ -292,25 +289,72 @@
   </div>
 </section>
 
-<!-- ATUACAO / PROJETOS -->
+<!-- 03 EXPERIENCIA -->
+<section id="experiencia">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num mono">03</span><h2 class="sec-title">Experiência</h2></div>
+
+    <div class="exp-item">
+      <div>
+        <div class="exp-company mono">DEALERNET</div>
+        <h3>Desenvolvedor de Software</h3>
+        <p>Desenvolvimento e manutenção de sistemas ERP/DMS para concessionárias, com foco no módulo de Oficina. Implementação de regras de negócio, faturamento, geração de notas fiscais e ordens de serviço. Integrações via APIs REST e SOAP em ambiente de alta criticidade.</p>
+        <div class="exp-tags">
+          <span class="exp-tag">GeneXus Ev2 / 18</span>
+          <span class="exp-tag">SQL Server</span>
+          <span class="exp-tag">C#</span>
+          <span class="exp-tag">PowerBuilder</span>
+          <span class="exp-tag">REST / SOAP</span>
+        </div>
+      </div>
+      <span class="exp-period mono">2021 · Atual</span>
+    </div>
+
+    <div class="exp-item">
+      <div>
+        <div class="exp-company mono">TROPICAL VEÍCULOS</div>
+        <h3>Gestor de TI</h3>
+        <p>Responsável pela infraestrutura de TI e administração do ERP/DMS da concessionária. Gestão de banco de dados SQL Server, implantação de sistemas e alinhamento entre tecnologia e operação do negócio. Essa vivência do lado do cliente é o que diferencia minha atuação como desenvolvedor hoje.</p>
+        <div class="exp-tags">
+          <span class="exp-tag">SQL Server</span>
+          <span class="exp-tag">ERP/DMS</span>
+          <span class="exp-tag">Infraestrutura</span>
+          <span class="exp-tag">ITIL</span>
+        </div>
+      </div>
+      <span class="exp-period mono">2014 · 2021</span>
+    </div>
+
+    <div class="exp-item">
+      <div>
+        <div class="exp-company mono">TROPICAL VEÍCULOS</div>
+        <h3>Gerente Comercial</h3>
+        <p>Gestão do departamento de Peças e Acessórios, com responsabilidade sobre estoque, faturamento e processos operacionais. Uso intensivo do ERP/DMS como ferramenta de decisão. Essa experiência comercial reforça a visão de negócio que aplico no desenvolvimento de sistemas.</p>
+        <div class="exp-tags">
+          <span class="exp-tag">ERP/DMS</span>
+          <span class="exp-tag">Gestão Comercial</span>
+          <span class="exp-tag">Análise de Dados</span>
+        </div>
+      </div>
+      <span class="exp-period mono">2018 · 2021</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- 04 ATUACAO -->
 <section id="atuacao">
   <div class="wrap">
-    <div class="sec-head">
-      <span class="sec-num mono">03</span>
-      <h2 class="sec-title">Domínio de Atuação</h2>
-    </div>
+    <div class="sec-head"><span class="sec-num mono">04</span><h2 class="sec-title">Domínio de Atuação</h2></div>
 
     <div class="proj">
       <span class="proj-n mono">A</span>
       <div>
         <h3>Desenvolvimento ERP/DMS Automotivo</h3>
-        <p>Desenvolvimento e evolução de funcionalidades críticas em sistemas de gestão para concessionárias: regras de negócio de Oficina, faturamento, geração de notas fiscais, ordens de serviço e integrações entre módulos. Atuação direta no ciclo completo — da análise do requisito ao código em produção.</p>
+        <p>Desenvolvimento e evolução de funcionalidades críticas em sistemas de gestão para concessionárias: regras de negócio de Oficina, faturamento, notas fiscais, ordens de serviço e integrações entre módulos. Atuação no ciclo completo, da análise do requisito ao código em produção.</p>
         <div class="proj-tags">
-          <span class="proj-tag">GeneXus</span>
-          <span class="proj-tag">C#</span>
-          <span class="proj-tag">SQL Server</span>
-          <span class="proj-tag">REST / SOAP</span>
-          <span class="proj-tag">PowerBuilder</span>
+          <span class="proj-tag">GeneXus</span><span class="proj-tag">C#</span>
+          <span class="proj-tag">SQL Server</span><span class="proj-tag">REST / SOAP</span>
         </div>
       </div>
       <div class="proj-status"><span class="badge"></span>Em produção</div>
@@ -320,13 +364,10 @@
       <span class="proj-n mono">B</span>
       <div>
         <h3>Ciência de Dados e Inteligência Artificial</h3>
-        <p>Atuação como Professor Universitário em disciplinas de Ciência de Dados, Machine Learning e MLOps em cursos de Graduação e Pós-Graduação. Orientação de projetos aplicados onde alunos desenvolvem produtos reais com dados — do problema ao MVP entregue.</p>
+        <p>Atuação como Professor Universitário em disciplinas de Ciência de Dados, Machine Learning e MLOps. Orientação de projetos aplicados onde alunos desenvolvem produtos reais com dados, do problema ao MVP entregue.</p>
         <div class="proj-tags">
-          <span class="proj-tag">Python</span>
-          <span class="proj-tag">Scikit-learn</span>
-          <span class="proj-tag">MLOps</span>
-          <span class="proj-tag">Data Science</span>
-          <span class="proj-tag">IA</span>
+          <span class="proj-tag">Python</span><span class="proj-tag">Scikit-learn</span>
+          <span class="proj-tag">MLOps</span><span class="proj-tag">Data Science</span>
         </div>
       </div>
       <div class="proj-status"><span class="badge"></span>Ativo</div>
@@ -336,12 +377,10 @@
       <span class="proj-n mono">C</span>
       <div>
         <h3>Backend em Go</h3>
-        <p>Desenvolvimento de APIs e serviços backend em Go, aplicando boas práticas de arquitetura, isolamento de integrações e modelagem em PostgreSQL. Projetos em desenvolvimento ativo — repositórios privados.</p>
+        <p>Desenvolvimento de APIs e serviços backend em Go, aplicando boas práticas de arquitetura, isolamento de integrações e modelagem em PostgreSQL. Projetos em desenvolvimento ativo, repositórios privados.</p>
         <div class="proj-tags">
-          <span class="proj-tag">Go</span>
-          <span class="proj-tag">PostgreSQL</span>
-          <span class="proj-tag">net/http</span>
-          <span class="proj-tag">APIs REST</span>
+          <span class="proj-tag">Go</span><span class="proj-tag">PostgreSQL</span>
+          <span class="proj-tag">net/http</span><span class="proj-tag">APIs REST</span>
         </div>
       </div>
       <div class="proj-status"><span class="badge off"></span>Privado</div>
@@ -350,39 +389,80 @@
   </div>
 </section>
 
-<!-- DOCENCIA -->
+<!-- 05 FORMACAO -->
+<section id="formacao">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num mono">05</span><h2 class="sec-title">Formação</h2></div>
+    <div class="form-grid">
+      <div class="form-item">
+        <div class="form-year mono">2024</div>
+        <h4>Pós-graduação em Desenvolvimento Full Stack e Full Cycle</h4>
+        <div class="form-inst">XP Educação</div>
+      </div>
+      <div class="form-item">
+        <div class="form-year mono">2015</div>
+        <h4>Especialização em Tecnologias para Aplicações Web</h4>
+        <div class="form-inst">UNOPAR</div>
+      </div>
+      <div class="form-item">
+        <div class="form-year mono">2015</div>
+        <h4>Licenciatura em Informática</h4>
+        <div class="form-inst">IFAM — Instituto Federal do Amazonas</div>
+      </div>
+      <div class="form-item">
+        <div class="form-year mono">2013</div>
+        <h4>Bacharelado em Sistemas de Informação</h4>
+        <div class="form-inst">Estácio</div>
+      </div>
+    </div>
+    <div class="form-comp-title mono">Formação complementar</div>
+    <div class="form-comp-grid">
+      <div class="form-comp-item">
+        <div class="fc-name">Bootcamp Arquiteto de Software</div>
+        <div class="fc-detail">XP Educação · 135h · 2024</div>
+      </div>
+      <div class="form-comp-item">
+        <div class="fc-name">Bootcamp Analista de Banco de Dados</div>
+        <div class="fc-detail">XP Educação · 148h · 2024</div>
+      </div>
+      <div class="form-comp-item">
+        <div class="fc-name">Bootcamp Backend Node.js</div>
+        <div class="fc-detail">XP Educação · 148h · 2024</div>
+      </div>
+      <div class="form-comp-item">
+        <div class="fc-name">Bootcamp Desenvolvedor Python</div>
+        <div class="fc-detail">IGTI · 148h · 2021</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 06 DOCENCIA -->
 <section id="docencia">
   <div class="wrap">
-    <div class="sec-head">
-      <span class="sec-num mono">04</span>
-      <h2 class="sec-title">Docência</h2>
-    </div>
+    <div class="sec-head"><span class="sec-num mono">06</span><h2 class="sec-title">Docência</h2></div>
     <div class="teach-grid">
       <div class="teach-text">
-        <p>Professor universitário há mais de quatro anos, com atuação em <strong>Graduação e Pós-Graduação</strong> nas áreas de Ciência de Dados, Machine Learning e Engenharia de Software — na XP Educação / IGTI.</p>
-        <p>O foco principal está nos <strong>Projetos Aplicados</strong>: cada aluno parte de um desafio real e entrega um produto ou MVP funcional, colocando em prática o que aprendeu. Oriento cursos de MBA em Data Science, Full Stack, Front End e Arquitetura de Software, além de toda a linha de Graduação.</p>
-        <p>Licenciado em Informática, com formação complementar em Docência no Ensino Superior e Educação a Distância — o que dá sustentação pedagógica à prática docente, não só técnica.</p>
+        <p>Professor universitário há mais de quatro anos, com atuação em <strong>Graduação e Pós-Graduação</strong> nas áreas de Ciência de Dados, Machine Learning e Engenharia de Software, na XP Educação / IGTI.</p>
+        <p>Foco principal em <strong>Projetos Aplicados</strong>: cada aluno parte de um desafio real e entrega um produto ou MVP funcional, colocando em prática o que aprendeu. Oriento cursos de MBA em Data Science, Full Stack, Front End e Arquitetura de Software, além de toda a linha de Graduação.</p>
+        <p>Licenciado em Informática, com formação complementar em Docência no Ensino Superior e Educação a Distância, o que dá sustentação pedagógica à prática docente.</p>
       </div>
       <div class="teach-card">
         <span class="label mono">Perfil acadêmico completo</span>
         <h4>Professor Marcos Prochnow</h4>
         <p>Detalhamento de disciplinas, orientações, formação e conteúdo educacional disponível na página dedicada.</p>
         <a class="teach-link" href="https://marcosprochnow.github.io/ProfessorProchnow" target="_blank">
-          Ver página de docência
-          <span>↗</span>
+          Ver página de docência <span>↗</span>
         </a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CONTATO -->
+<!-- 07 CONTATO -->
 <section id="contato" style="border-bottom: none;">
   <div class="wrap">
-    <div class="sec-head">
-      <span class="sec-num mono">05</span>
-      <h2 class="sec-title">Contato</h2>
-    </div>
+    <div class="sec-head"><span class="sec-num mono">07</span><h2 class="sec-title">Contato</h2></div>
     <div class="contact-big">Vamos construir<br>algo <span class="g">sólido.</span></div>
     <div class="contact-links">
       <a href="mailto:marcosprochnow@gmail.com"><span>E-mail</span><span>↗</span></a>
